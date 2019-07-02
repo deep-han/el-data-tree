@@ -123,6 +123,7 @@ const dialogForm = 'dialogForm'
 const defaultParentKey = 'parentId'
 const defaultTreeAttrs = {
   highlightCurrent: true,
+  defaultExpandedKeys: [],
   props: {
     children: 'children',
     label: 'name'
@@ -406,7 +407,7 @@ export default {
     checkedKeys(keys) {
       this.updateCheckedKeys(keys)
     },
-    'treeAttrs.defaultExpandedKeys': {
+    'treeAttributes.defaultExpandedKeys': {
       handler(val) {
         val.forEach(item => this.cacheExpandedKeys.add(item))
         this.updateDefaultExpandKeys()
